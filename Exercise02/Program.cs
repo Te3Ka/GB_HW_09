@@ -19,6 +19,7 @@ void Author()
     Console.WriteLine();
 }
 
+//Подсчёт суммы чисел между двумя значениями
 int SumNumber(int m, int n)
 {
 	if (m == n)
@@ -36,7 +37,6 @@ int SumNumber(int m, int n)
         return -1;
     }
 }
-
 
 //Получение числа от пользователя.
 int GetNumber(string name)
