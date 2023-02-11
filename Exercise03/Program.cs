@@ -22,7 +22,22 @@ void Author()
 //Функция Аккермана
 int FunctionAckerman(int m, int n)
 {
-
+	if (m == 0)
+	{
+		return n + 1;
+	}
+	else if (m > 0 && n == 0)
+	{
+		return FunctionAckerman(m - 1, 1);
+	}
+	else if (m > 0 && n > 0)
+	{
+		return FunctionAckerman(m - 1, FunctionAckerman(m, n - 1));
+	}
+	else
+	{
+		return -1;
+	}
 }
 
 //Получение числа от пользователя.
@@ -30,9 +45,9 @@ int GetNumber(string name)
 {  
     Console.Write($"Введите значение {name} =  ");
     int.TryParse(Console.ReadLine(), out int num);
-    while (num <= 0)
+    while (num < 0)
     {
-        Console.WriteLine("Число меньше 1! Это не натуральное число. Введите заново: ");
+        Console.WriteLine("Число меньше 0! Это не натуральное число. Введите заново: ");
         int.TryParse(Console.ReadLine(), out num);
     }
     return num;
